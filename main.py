@@ -31,7 +31,7 @@ def SearchUp(username):
             'username':item.get('uname')
             }
         data.append(content)
-    return data
+    return {'ret': data}
 
 @BliCreeper.get('/api/video/{id}/{page}')#id为上面的mid，page为页数
 def getVideo(id,page):
@@ -41,7 +41,7 @@ def getVideo(id,page):
     }
     params={
         'mid':id,
-        'pn':page
+        'pn':page + 1
     }
     res=requests.get(url,params=params,headers=headers)
     list=res.json().get('data').get('list').get('vlist')
@@ -54,7 +54,7 @@ def getVideo(id,page):
         }
         datas.append(data)
     print(datas)
-    return datas
+    return {'ret': datas}
 
 @BliCreeper.get('/api/video/{id}')
 def bliSummarize(id):
