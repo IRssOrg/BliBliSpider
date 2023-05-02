@@ -1,0 +1,13 @@
+# Test your FastAPI endpoints
+
+### 作者查询接口
+GET http://127.0.0.1:8000/api/search/author/纸扇徯璺
+Accept: application/json
+
+### 视频列表接口
+GET http://127.0.0.1:8000/api/video/117318662/1
+Accept: application/json
+
+### 视频总结接口
+GET http://127.0.0.1:8000/api/video/117318662
+Accept: application/json

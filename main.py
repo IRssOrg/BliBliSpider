@@ -19,7 +19,7 @@ def SearchUp(username):
 
     params={
         'search_type':'bili_user',
-        'keyword':'武汉大学'
+        'keyword': username
     }
     res=requests.get('https://api.bilibili.com/x/web-interface/search/type',headers=headers,params=params)
     print(res.json().get('data').get('result'))
