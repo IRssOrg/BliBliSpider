@@ -41,16 +41,18 @@ def getVideo(id,page):
     }
     params={
         'mid':id,
-        'pn':page + 1
+        'pn':page
     }
     res=requests.get(url,params=params,headers=headers)
     list=res.json().get('data').get('list').get('vlist')
+    print(list)
     datas=[]
     for item in list:
         data={
             'id':item.get('bvid'),
-            'author':item.get('author'),
-            'created_time':item.get('created')
+            'time':item.get('created'),
+            'timestamp': item.get('created'),
+            'title': item.get('title')
         }
         datas.append(data)
     print(datas)
@@ -77,8 +79,7 @@ def bliSummarize(id):
     print(content.text)
     return content.text
 #此函数只返回文本
-getVideo(522122532,1)
-bliSummarize('BV1Co4y147Cu')
+
 '''
 url='https://b.jimmylv.cn/api/summarize'
     headers={
