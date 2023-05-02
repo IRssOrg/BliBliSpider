@@ -52,7 +52,8 @@ def getVideo(id,page):
             'id':item.get('bvid'),
             'time':item.get('created'),
             'timestamp': item.get('created'),
-            'title': item.get('title')
+            'title': item.get('title'),
+            'description': item.get('description')
         }
         datas.append(data)
     print(datas)
